@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #F2F2F2;
+}
+
+main {
+    margin: 4rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+main .left {
+    width: 40%;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+    grid-template-rows: repeat(3, minmax(200px, auto));
+    grid-row-gap: 2rem;
+    margin-right: 2rem;
+}
+
+main .left > div {
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+main .right {
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 50%));
+    grid-template-rows: repeat(1, minmax(300px, object-fit)) object-fit repeat(3, minmax(300px, auto)) auto repeat(1, minmax(300px, auto));
+    grid-column-gap: 2rem;
+    grid-template-areas:
+                        "right1 right2"
+                        "right3 right3"
+                        "right4 right4"
+                        "right5 right5"
+                        "right6 right6"
+                        "right7 right7"
+                        "right8 right8";
+}
+
+main .right > div {
+    background-color: #fff;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+main .right .right1 {
+    grid-area: right1;
+}
+main .right .right2 {
+    grid-area: right2;
+    height: fit-content;
+}
+main .right .right3 {
+    grid-area: right3;
+    height: 4rem;
+    margin-top: 1.3rem;
+    margin-bottom: 1rem;
+}
+main .right .right4 {
+    grid-area: right4;
+}
+main .right .right5 {
+    grid-area: right5;
+}
+main .right .right6 {
+    grid-area: right6;
+}
+main .right .right7 {
+    grid-area: right7;
+    height: 4rem;
+    margin-top: 1.3rem;
+    margin-bottom: 1rem;
+}
+main .right .right8 {
+    grid-area: right8;
+}
+
+@media (max-width: 1020px) {
+    main {
+        display: grid;
+        margin: 7rem;
+        margin-top: 4rem;
+    }
+
+    main .left {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(200px, auto));
+        grid-template-rows: repeat(2, minmax(200px, auto));
+        grid-row-gap: 2rem;
+        margin-right: 2rem;
+    }
+    
+    main .right {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(300px, auto));
+        grid-template-rows: repeat(1, minmax(300px, object-fit)) object-fit repeat(3, minmax(300px, auto)) auto repeat(1, minmax(300px, auto));
+        grid-column-gap: 2rem;
+        grid-template-areas:
+                            "right1"
+                            "right3"
+                            "right4"
+                            "right5"
+                            "right6"
+                            "right7"
+                            "right8";
+    }
+    main .right .right2 {
+        display: none;
+    }
+}
