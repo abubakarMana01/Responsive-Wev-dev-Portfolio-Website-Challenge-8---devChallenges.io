@@ -654,6 +654,12 @@ footer p a {
     main .left {
         margin-bottom: 4rem;
     }
+    main .right .right8 img {
+        width: 50%;
+        height: 250px;
+        border-radius: 12px 0 0 0;
+        object-fit: cover;
+    }
 }
 
 @media (max-width: 530px) {
